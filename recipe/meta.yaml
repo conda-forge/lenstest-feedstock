@@ -6,29 +6,30 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/lenstest-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/lenstest-{{ version }}.tar.gz
   sha256: 4dcb5d0c8ef33d8d9ff16c26967b82fd45def45a1450bbbac7a15785ed21d631
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
     - pip
-    - python >=3.8
+    - python {{ python_min }}
     - setuptools >=44
   run:
     - matplotlib-base
     - numpy
-    - python >=3.8
+    - python >={{ python_min }}
 
 test:
   imports:
     - lenstest
   requires:
     - pytest
+    - python {{ python_min }}
   source_files:
     - tests/test_foucault.py
     - tests/test_lenstest.py
