@@ -1,5 +1,5 @@
 {% set name = "lenstest" %}
-{% set version = "1.0.0" %}
+{% set version = "1.0.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/lenstest-{{ version }}.tar.gz
-  sha256: 8532b689a9745ad75b3e3b7b9ada68eb736525a5d5b47363493877dbacf1af93
+  sha256: 5249d32e9e429d9d99c95b95a7f32feceac7e2549d01ce91f08c15d3cc1d8eda
 
 build:
   noarch: python
